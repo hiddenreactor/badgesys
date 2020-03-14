@@ -19,7 +19,9 @@
         {
             $MemberName = $row['MemberName'];
             $MemberID = $row['MemberID'];
+            $SectionID = $row['SectionID'];
             $SectionName = $row['SectionName'];
+            $ColorID = $row['ColorID'];
             $Color = $row['Color'];
             // $DOB = $row['DOB'];
             // $Gen = $row['Gender'];
