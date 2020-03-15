@@ -29,14 +29,14 @@
 
         $GetID = $_GET['S_ID'];
         //$query = "UPDATE members SET MemberName='".$MemberName."' WHERE MemberID='".$GetID."'";
-        $query = "UPDATE members SET MemberName='".$Member."', SectionID='".$SID."' WHERE MemberID='".$GetID."'";
-                                            
+        $query = "UPDATE members SET MemberName='".$Member."', SectionID=".$SID." WHERE MemberID=".$GetID."";
+           echo $query;                                 
         $query_run = mysqli_query($con, $query); 
         if($query_run)
         {
             echo '<script type="text/javascript">alert("Updated")</script>'; 
-            header("location:admin-panel.php");
-            exit();       
+            //header("location:admin-panel.php");
+            //exit();       
         } else
         {
             echo '<script type="text/javascript">alert("Not Updated")</script>';
