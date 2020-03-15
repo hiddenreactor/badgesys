@@ -8,7 +8,7 @@
         $query = "SELECT * FROM members, colors, sections, earned, badges, category WHERE 
         members.MemberID ='".$GetID."' AND 
         members.ColorID = colors.ColorID AND 
-        sections.SectionID = members.SectionID AND
+        members.SectionID = sections.SectionID AND
         badges.BadgeID = earned.BadgeID AND
         category.CategoryID = badges.CategoryID AND
         earned.MemberID = '".$GetID."'
@@ -53,15 +53,15 @@
               
               <input type="text" name="MemberName" placeholder="Member Name" class="form-control mb-2" value="<?php echo $MemberName ?>">
               
-              <select name="SectionID" class="form-control mb-2" id="sections" value="<?php echo $SectionName ?>">
-                <option value="<?php echo $SectionName ?>"><?php echo $SectionName ?></option>
+              <select name="SectionID" class="form-control mb-2">
+              <option value ="<?php echo $SectionID ?>"> <?php echo $row["SectionName"]; ?> </option>
                 <?php
                   $query = "SELECT * FROM sections ";
                   $result = mysqli_query($con, $query);   
                   while($row=mysqli_fetch_assoc($result))
                   { 
                 ?>
-                <option value ="<?php echo $SectionName ?>"> <?php echo $row["SectionName"]; ?> </option>
+                <option> <?php echo $row["SectionID"]; ?> </option>
                 <?php    
                   }
                 ?>                   
