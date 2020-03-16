@@ -53,7 +53,7 @@
               
               <input type="text" name="MemberName" placeholder="Member Name" class="form-control mb-2" value="<?php echo $MemberName ?>">
               
-              <select name="SectionID" class="form-control mb-2" id="sections">
+              <select name="SectionID" class="form-control mb-2">
                 <option value ="<?php echo $SectionID ?>"><?php echo$row["SectionName"]; ?> </option>
                 <?php
                   $query = "SELECT * FROM sections ";
@@ -61,7 +61,7 @@
                   while($row=mysqli_fetch_assoc($result))
                   { 
                 ?>
-                <option><?php echo $row["SectionID"]; ?></option>
+                <option><?php echo $row['SectionID']; ?></option>
                 <?php    
                   }
                 ?>                   
