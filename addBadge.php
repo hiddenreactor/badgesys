@@ -85,25 +85,15 @@ function getBadge(val)
     </div>
 
     <div class="row">
-        
-        <!-- <div class="col-lg-3">
-            <div class="card mt-3">
-                <div class="card-title bg-info
-                 text-white py-2 rounded-top">
-                    <h4 class="text-center"> <?php echo $MemberName ?></h4>
-                </div>
-                <div class="card-body">
-                </div>
-            </div>
-        </div> -->
-        
+             
         <div class=col-lg-12>
             <div class="card mt-3">
             
                 <table class="table table-striped">
                 <form action="addBadgesphp.php" method="POST" enctype="multipart/form-data">
                     <tr>
-                        <!-- <td>Member Name</td> -->
+                        <td>Member Name</td> -----------if i add a td here and have a select name='MemberID' below, it will INSERT, 
+                                                            but i don't to have member name here                        
                         <td>Section Name</td>
                         <td>Group Color</td>
                         <td>Badge Category</td>
@@ -113,11 +103,8 @@ function getBadge(val)
                     </tr>
                     
                     <tr>
-                        <!-- <td>
-                        <select name='MemberID' class="form-control mb-2">
-                                <option value ="<?php echo $row['MemberID']; ?>"><?php echo $row['MemberName']; ?></option>
-                        </select>        
-                        </td> -->
+                        I need to do something here so MemberID can be called, i don't even know how to ask my question
+                        
                         <td>
                             <select name='SectionID' id='SectionID' class="form-control mb-2">
                                 <option value ="<?php echo $row['SectionID']; ?>"><?php echo $row['SectionName']; ?></option>
