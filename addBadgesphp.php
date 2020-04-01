@@ -4,20 +4,13 @@ require_once('includes/connection.php');
 
 if(isset($_POST['addBadge2']))
 {
-  //print_r($Target);
-//   $Member = mysqli_real_escape_string($con, $_POST['MemberName']);
   $MemberID = mysqli_real_escape_string($con, $_POST['MemberID']);
   $SectionID = mysqli_real_escape_string($con, $_POST['SectionID']);
   $ColorID = mysqli_real_escape_string($con, $_POST['ColorID']); 
   $CategoryID = mysqli_real_escape_string($con, $_POST['CategoryID']);
   $BadgeID = mysqli_real_escape_string($con, $_POST['BadgeID']);
   $Level = mysqli_real_escape_string($con, $_POST['Level']);
-  $Date = mysqli_real_escape_string($con, $_POST['DateReceived']);
-  
-//   $ID = '';
-
-
-                                 
+  $Date = mysqli_real_escape_string($con, $_POST['DateReceived']);                      
   
   if(empty($SectionID) || empty($ColorID) || empty($BadgeID) || empty($Level) || empty($Date))
   {
