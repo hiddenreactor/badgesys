@@ -7,11 +7,10 @@
     {
         $GetID = $_GET['addBadge'];
         $query = "SELECT * FROM members, colors, sections, earned, badges, category WHERE 
-        members.MemberID = '".$GetID."' AND
-        earned.MemberID = '".$GetID."' AND 
-        earned.ColorID = colors.ColorID AND 
-        earned.SectionID = sections.SectionID AND
-        badges.BadgeID = earned.BadgeID AND
+        members.MemberID = '".$GetID."' AND        
+        members.ColorID = colors.ColorID AND 
+        members.SectionID = sections.SectionID AND
+        earned.BadgeID = badges.BadgeID AND
         category.CategoryID = badges.CategoryID
         ";
         $result = mysqli_query($con,$query);
@@ -73,27 +72,21 @@ function getBadge(val)
 <div class="container" onLoad="getDetail(this.value);">
     <div class="row">
         <div class="col">
-            <div class="card bg-dark text-white mt-3">
-                <h3 class="text-center py-3">Add Badges for <b><u><?php echo $MemberName ?></b></u></h3>
+            <div class="card bg-dark text-white mt-5">
+                <h3 class="text-center py-3">Add Badges for <?php echo $MemberName ?></h3>
             </div>
             <?php
-                
-            addBadgeFunction();
-                    
-        ?>
+                addBadgeFunction();      
+            ?>
         </div>
     </div>
 
     <div class="row">
-             
-        <div class=col-lg-12>
+        <div class=col-lg-12> 
             <div class="card mt-3">
-            
                 <table class="table table-striped">
-                <form action="addBadgesphp.php" method="POST" enctype="multipart/form-data">
-                    <tr>
-                        <td>Member Name</td> -----------if i add a td here and have a select name='MemberID' below, it will INSERT, 
-                                                            but i don't to have member name here                        
+                <form action="addBadgesphp.php?M_ID=<?php echo $GetID ?>" method="POST" enctype="multipart/form-data">        
+                    <tr>                    
                         <td>Section Name</td>
                         <td>Group Color</td>
                         <td>Badge Category</td>
@@ -101,12 +94,12 @@ function getBadge(val)
                         <td>Badge Level</td>
                         <td>Date Received</td>
                     </tr>
-                    
+
                     <tr>
-                        I need to do something here so MemberID can be called, i don't even know how to ask my question
-                        
                         <td>
                             <select name='SectionID' id='SectionID' class="form-control mb-2">
+                                
+                                
                                 <option value ="<?php echo $row['SectionID']; ?>"><?php echo $row['SectionName']; ?></option>
                                 <?php
                                 $query = "SELECT * FROM sections ";
@@ -155,7 +148,7 @@ function getBadge(val)
                             </select>                            
                         </td>
                         <td>
-                            <select name='Level' class="form-control mb-2">
+                            <select name='Level' class="form-control">
                                 <option value="null">Level</option>
                                 <option value='1'>1</option>
                                 <option value='2'>2</option>
@@ -173,12 +166,18 @@ function getBadge(val)
                         </td>
                     </tr>   
  <!-- ----------------------------------------------------------  Remove bottom later                  -->
-                                 
-                                        
+                                                 
                 </table>
-                <button name="addBadge2" class="btn btn-success">Add Badges</button>
-                </form> 
-                
+                                            
+                        <div class="card-body">                          
+                            <a href="admin-panel.php" class="btn btn-primary mb-1">Back</a>                  
+                                <div class="form-inline float-right">
+                                    <button name="addBadge2" class="btn btn-danger">Add Badges</button>
+                                </div>                            
+                        </div>      
+                    
+             
+                      
             </div>
         </div>
         
