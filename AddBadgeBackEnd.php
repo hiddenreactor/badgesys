@@ -28,7 +28,7 @@
         $query = "INSERT INTO earned (MemberID, SectionID, ColorID, BadgeID, Level, DateReceived) VALUES ('$GetID', '$SectionID', '$ColorID', '$BadgeID', '$Level', '$Date')";
                   
         mysqli_query($con, $query);
-        echo $query;
+       
 
         if($query)
         {
