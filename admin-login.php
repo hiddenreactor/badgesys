@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-6 m-auto">
         <div class="mt-5">
-            <img src="images/p.png" width="150" height="150" class="d-flex m-auto">
+            <img src="images/scout.png" width="150" height="150" class="d-flex m-auto">
         </div>
         <div class="card">
           <div class="card-title bg-dark rounded-top">
