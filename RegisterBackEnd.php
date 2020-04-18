@@ -2,7 +2,7 @@
 
 require_once('includes/connection.php');
 
-$Access = "Philbert";	// Accesscode
+$Access = "*Admin_Scout33#";	// Accesscode
 
 if(isset($_POST['register']))
 {
