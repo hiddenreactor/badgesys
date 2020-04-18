@@ -1,0 +1,20 @@
+body {
+  background-color: #ccc
+}
+/* 
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: rgb(220, 220, 220);
+}
+
+
+tr:nth-child(odd) {
+  background-color: lightskyblue;
+  }
+
+ tr:nth-child(even) {
+  background-color: rgb(250, 250, 250);
+  }
+
+  th {
+     background-color: lightseagreen;
+  } */
