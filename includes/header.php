@@ -11,7 +11,7 @@
   <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
       <div class="container">
-        <button class="navbar-toggler" data-toggle="colllapse" data-target="#navbar" type="button" name="button">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar" type="button" name="button">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a href="login.php" class="navbar-brand"><h3>Group 33 Badge Tracking Portal</h3></a>
