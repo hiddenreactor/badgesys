@@ -41,8 +41,6 @@
                 $('#yourphone').usPhoneFormat({
                     format: '(xxx) xxx-xxxx',
                 });
-                
-                $('#yourphone2').usPhoneFormat();
             });
 
         </script>
@@ -59,7 +57,7 @@
 
           <?php
             
-            RegisterFunction();
+            AddMemberFunction();
             
           ?>
 
@@ -67,7 +65,7 @@
 
             <form action="AddMemberBackEnd.php" method="POST" enctype="multipart/form-data">
                 <div class="form-inline float-left">
-                    <a href="admin-panel.php" class="btn btn-primary mb-3">Back</a>
+                    <a href="AdminPanelFrontEnd.php" class="btn btn-primary mb-3">Back</a>
                 </div>
               <input type="text" name='MemberName' placeholder="Member Name" value="" class="form-control mb-2">
                 <select name='SectionID' id='SectionID' class="form-control mb-2">

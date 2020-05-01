@@ -12,14 +12,16 @@
     $Level = mysqli_real_escape_string($con, $_POST['Level']);
     $Date = mysqli_real_escape_string($con, $_POST['DateReceived']);
 
-    echo $SectionID;
-    echo $ColorID;
+    // echo $SectionID;
+    // echo $ColorID;
               
   
   if(empty($SectionID) || empty($ColorID) || empty($BadgeID) || empty($Level) || empty($Date))
   {
-    //   header("location:addBadge.php?Empty=$GetID");  
-      header("location:message.php"); 
+      // header("location:AddBadgeFrontEnd.php?Empty");  
+      // header("location:message.php"); 
+      echo '<script type="text/javascript">alert("Missing Information")</script>';
+      echo "<script>setTimeout(\"location.href = 'admin-panel.php';\",1000);</script>";  
       exit();
   }    
     else
@@ -28,7 +30,7 @@
         $query = "INSERT INTO earned (MemberID, SectionID, ColorID, BadgeID, Level, DateReceived) VALUES ('$GetID', '$SectionID', '$ColorID', '$BadgeID', '$Level', '$Date')";
                   
         mysqli_query($con, $query);
-       
+        
 
         if($query)
         {

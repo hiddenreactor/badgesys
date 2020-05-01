@@ -38,7 +38,7 @@ if(isset($_POST['register']))
                 }
                 else
                 {
-                $query = "SELECT * FROM badge_data WHERE UName='".$UserName."'";
+                $query = "SELECT * FROM user_data WHERE UName='".$UserName."'";
                 $result = mysqli_query($con,$query);
 
                 if(mysqli_fetch_assoc($result))
@@ -48,7 +48,7 @@ if(isset($_POST['register']))
                 }
                 else
                 {
-                    $query = "SELECT * FROM badge_data WHERE Email='".$Email."'";
+                    $query = "SELECT * FROM user_data WHERE Email='".$Email."'";
                     $result = mysqli_query($con,$query);
 
                     if(mysqli_fetch_assoc($result))
@@ -68,7 +68,7 @@ if(isset($_POST['register']))
                         date_default_timezone_set('America/Vancouver');
                         $Date = date("d/m/y");
                         
-                        $query = "INSERT INTO badge_data (FName, LName, UName, Email, Password, Date) VALUES ('$FirstName', '$LastName', '$UserName', '$Email', '$HashPass', '$Date')";
+                        $query = "INSERT INTO user_data (FName, LName, UName, Email, Password, Date) VALUES ('$FirstName', '$LastName', '$UserName', '$Email', '$HashPass', '$Date')";
                                                                  
                         mysqli_query($con, $query);
                             header("location:RegisterFrontEnd.php?success");

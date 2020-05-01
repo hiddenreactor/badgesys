@@ -24,38 +24,39 @@ if (isset($_POST['addMember'])) {
             header("location:AddMemberFrontEnd.php?character");
             exit();
         } else {
-            if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-                header("location:AddMemberFrontEnd.php?ValidEmail");
+            $query = "SELECT * FROM members WHERE MemberName='".$MemberName."'";
+            $result = mysqli_query($con, $query);
+
+            if (mysqli_fetch_assoc($result)) {
+                header("location:AddMemberFrontEnd.php?MemberTaken");
                 exit();
             } else {
-                $query = "SELECT * FROM members WHERE Email='".$Email."'";
-                $result = mysqli_query($con, $query);
-
-                if (mysqli_fetch_assoc($result)) {
-                    header("location:AddMemberFrontEnd.php?EmailTaken");
+                if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+                    header("location:AddMemberFrontEnd.php?ValidEmail");
                     exit();
                 } else {
-                    if (!preg_match('/^[0-9\-]|[\+0-9]|[0-9\s]|[0-9()]*$/', $phone)) {
-                        header("location:AddMemberFrontEnd.php?phone");
-                        exit();
-                    } else {
-                        // $HashPass = password_hash($Password, PASSWORD_DEFAULT);
-                        date_default_timezone_set('America/Vancouver');
-                        $date = date("d/m/y");
+                        if (!preg_match('/^[0-9\-]|[\+0-9]|[0-9\s]|[0-9()]*$/', $phone)) {
+                            header("location:AddMemberFrontEnd.php?phone");
+                            exit();
+                        } else {
+                            // $HashPass = password_hash($Password, PASSWORD_DEFAULT);
+                            date_default_timezone_set('America/Vancouver');
+                            // $date = date("d/m/y");
 
-                        $query = "INSERT INTO members (MemberName, SectionID, ColorID, Email, Contact, Date) VALUES ('$MemberName', '$SectionID', '$ColorID', '$Email', '$Contact', '$date')";
+                            $query = "INSERT INTO members (MemberName, SectionID, ColorID, Email, Contact, Date) VALUES ('$MemberName', '$SectionID', '$ColorID', '$Email', '$Contact', '$date')";
                         
-                        echo $query;
+                            echo $query;
 
-                        mysqli_query($con, $query);
-                        header("location:AddMemberFrontEnd.php?success");
-                        exit();
+                            mysqli_query($con, $query);
+                            header("location:AddMemberFrontEnd.php?success");
+                            exit();
+                        }
                     }
                 }
             }
         }
     }
-}
+
 
 
  ?>

@@ -87,7 +87,7 @@
               </select>
               <div class="row">                                             
                         <div class="card-body">                          
-                            <a href="admin-panel.php" class="btn btn-primary mb-1">Back</a>                  
+                            <a href="AdminPanelFrontEnd.php" class="btn btn-primary mb-1">Back</a>                  
                                 <div class="form-inline float-right">
                                 <button name="update" class="btn btn-success" onclick = "Redirect();">Update Now</button>
                                 </div>                            

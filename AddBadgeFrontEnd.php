@@ -69,6 +69,29 @@ function getBadge(val)
 }
 </script>
 
+<script>
+    if(performance.navigation.type == 2){
+        location.reload(true);
+    }
+</script>
+<script>
+
+$(document).ready(function() {
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;       
+    $("#theDate").attr("value", today);
+});
+
+</script>
+
 <div class="container" onLoad="getDetail(this.value);">
     <div class="row">
         <div class="col">
@@ -148,6 +171,7 @@ function getBadge(val)
                             </select>                            
                         </td>
                         <td>
+                            <!-- <input name="Level" type="text" class="form-control"> -->
                             <select name='Level' class="form-control">
                                 <option value="null">Level</option>
                                 <option value='1'>1</option>
@@ -162,14 +186,14 @@ function getBadge(val)
                             </select>
                         </td>
                         <td>                            
-                            <input type="text" name="DateReceived" placeholder="YYYY-MM-DD" class="form-control mb-1">            
+                            <input type='date' id="theDate" name="DateReceived" placeholder="YYYY-MM-DD" class="form-control mb-1">            
                         </td>
                     </tr>   
                                                  
                 </table>
                                             
                         <div class="card-body">                          
-                            <a href="admin-panel.php" class="btn btn-primary mb-1">Back</a>                  
+                            <a href="AdminPanelFrontEnd.php" class="btn btn-primary mb-1">Back</a>                  
                                 <div class="form-inline float-right">
                                     <button name="addBadge" class="btn btn-danger">Add Badges</button>
                                 </div>                            

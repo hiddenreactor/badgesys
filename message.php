@@ -13,14 +13,14 @@
 
           <div class="card-body">
 
-            <p>This appears to be a new member, a badge must input first before viewing or updating</p>
+            <h1>This appears to be a new member, a badge must input first before viewing or updating</h1>
             
 
           </div>
           <div class="row">                                             
                         <div class="card-body text-center">                          
-                            <!-- <a href="admin-panel.php" class="btn btn-primary mb-1">Back</a> -->
-                            <a href="javascript:history.go(-1)" class="btn btn-primary mb-1">Back</a>                  
+                            <a href="AdminPanelFrontEnd.php" class="btn btn-primary mb-1">Back</a>
+                            <!-- <a href="javascript:history.go(-1)" class="btn btn-primary mb-1">Back</a>                   -->
                                                        
                         </div>      
                     </div> 
