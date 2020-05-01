@@ -17,7 +17,7 @@ require_once('includes/function.php');
     <div class="col-lg-6">
       <div class="card"> 
           <div class="card-body">
-            <form action="LoginBackEnd.php" method="POST">
+            <form action="LoginPHP.php" method="POST">
               <input type="text" name="email_user" placeholder="Email or User Name" value="" class="form-control mb-2">
               <input type="password" name="password" placeholder="Password" value="" class="form-control mb-3">
               <button name="login" class="btn btn-success">Leader Login</button>
