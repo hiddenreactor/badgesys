@@ -87,7 +87,7 @@ require_once('includes/footer.php');
 
                 <div class="row">                                             
                     <div class="card-body">                          
-                        <a href="admin-panel.php" class="btn btn-primary mb-1">Back</a>  
+                        <a href="AdminPanelFrontEnd.php" class="btn btn-primary mb-1">Back</a>  
                         <div class="form-inline float-right">
                             <a href="AddBadgeFrontEnd.php?addBadge=<?php echo $GetID ?>" class="btn btn-danger">Add Badge</a>
                         </div>
