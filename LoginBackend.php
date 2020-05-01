@@ -15,7 +15,7 @@ require_once('includes/connection.php');
             $Email_User = mysqli_real_escape_string($con, $_POST['email_user']);
             $Password = mysqli_real_escape_string($con, $_POST['password']);
 
-            $query = "SELECT * FROM badge_data WHERE Email='".$Email_User."' OR UName='".$Email_User."'";
+            $query = "SELECT * FROM user_data WHERE Email='".$Email_User."' OR UName='".$Email_User."'";
             $result = mysqli_query($con,$query);
 
             if($row = mysqli_fetch_assoc($result))
