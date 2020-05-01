@@ -23,6 +23,11 @@
               echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
             }
 
+            if (isset($_GET['date'])) {
+              $Message = "Incorrect date format";
+              echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+            }
+
             if (isset($_GET['EmailTaken'])) {
               $Message = "Email already taken";
               echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
@@ -153,5 +158,46 @@
               header("location:index.php");
             }
         }
+
+        function AddMemberFunction() {
+
+          $Message = "";
+
+          if (isset($_GET['empty'])) {
+            $Message = "Please enter all fields";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['character'])) {
+            $Message = "Please enter First Name and Last Name seprate with space";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['ValidEmail'])) {
+            $Message = "Please enter valid Email";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['phone'])) {
+            $Message = "Pleae enter valid phone number";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['MemberTaken'])) {
+            $Message = "Member already exist";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['EmailTaken'])) {
+            $Message = "Email already taken";
+            echo '<div class="alert alert-danger text-center">'.$Message.'</div>';
+          }
+
+          if (isset($_GET['success'])) {
+            $Message = "You have successfully added a member";
+            echo '<div class="alert alert-success text-center">'.$Message.'</div>';
+          }
+
+      }
 
 ?>
