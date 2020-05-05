@@ -27,7 +27,7 @@
               <input type="email" name="Email" placeholder="Email" value="" class="form-control mb-2">
               <input type="password" name="Password" placeholder="Password" value="" class="form-control mb-3">
               <input type="password" name="AccessCode" placeholder="Access Code" value="" class="form-control mb-3">                                      
-              <a href="login.php" class="btn btn-primary mb-1">Back</a>                  
+              <a href="index.php" class="btn btn-primary mb-1">Back</a>                  
                 <div class="form-inline float-right">
                   <button name="register" class="btn btn-success">Register</button>
                 </div>                        
