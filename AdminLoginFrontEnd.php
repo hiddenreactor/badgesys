@@ -35,7 +35,7 @@
           <form action="AdminLoginBackEnd.php" method="POST">
               <input type="text" name="email" placeholder="Email" value="" class="form-control mb-2">
               <input type="password" name="password" placeholder="Password" value="" class="form-control mb-3">
-              <a href="login.php" class="btn btn-primary mb-1">Back</a>                  
+              <a href="index.php" class="btn btn-primary mb-1">Back</a>                  
                 <div class="form-inline float-right">
                   <button name="login" class="btn btn-danger">Administrator Login</button>
                 </div> 
