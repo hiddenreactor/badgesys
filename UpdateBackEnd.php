@@ -18,7 +18,7 @@
         if($query_run)
         {
             echo '<script type="text/javascript">alert("Member Updated")</script>';  
-            echo "<script>setTimeout(\"location.href = 'admin-panel.php';\",1000);</script>";
+            echo "<script>setTimeout(\"location.href = 'AdminPanelFrontEnd.php';\",1000);</script>";
             //echo "<script type="text/javascript">alert("Updated")</script>";
             // header("location:admin-panel.php");
             exit(); 
