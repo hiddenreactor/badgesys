@@ -7,6 +7,14 @@ $column = array("sections.SectionName", "members.MemberName", "colors.Color",  "
 //  INNER JOIN sections 
 //  ON sections.SectionID = members.SectionID 
 // ";
+// $query = "
+//  SELECT * FROM ((((earned
+//  INNER JOIN members ON earned.MemberID = members.MemberID)
+//  INNER JOIN sections ON earned.SectionID = sections.SectionID)
+//  INNER JOIN colors ON earned.ColorID = colors.ColorID)
+//  INNER JOIN badges ON earned.BadgeID = badges.BadgeID
+//  )
+// ";
 $query = "
  SELECT * FROM ((((earned
  INNER JOIN members ON earned.MemberID = members.MemberID)
