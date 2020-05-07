@@ -2,7 +2,7 @@
 require_once('includes/connection.php');
 require_once('includes/header.php');
 require_once('includes/footer.php');
-$query = "SELECT * FROM sections ORDER BY SectionName ASC";
+$query = "SELECT * FROM sections ORDER BY SectionID ASC";
 // $query = "SELECT * FROM members, sections, colors WHERE
 // members.SectionID=sections.SectionID AND
 // members.ColorID=colors.ColorID ORDER BY MemberName
