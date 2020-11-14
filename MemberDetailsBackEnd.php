@@ -3,7 +3,7 @@
 // include_once('includes/connection.php');
 // sleep(1);
 if (isset($_POST["membername"])) {
-    $con = mysqli_connect("localhost", "root", "", "scout");
+    $con = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "b8a2927a50099e", "8036e8df", "heroku_c1c6c2ef5faa08f");
     $membername = mysqli_real_escape_string($con, $_POST["membername"]);
     $section = mysqli_real_escape_string($con, $_POST["section"]);
     $color = mysqli_real_escape_string($con, $_POST["color"]);
