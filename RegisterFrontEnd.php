@@ -30,7 +30,7 @@
           <input type="text" id="lname" class="form-control mb-2" name="LName" placeholder="Last Name" required data-parsley-pattern="^[a-zA-Z]+$" data-parsley-trigger="focusout" data-parsley-lastname data-parsley-lastname-message="Invalid Character">
           <input type="text" id="username" class="form-control mb-2" name="UName" placeholder="Username" data-parsley-trigger="focusout" required data-parsley-username data-parsley-username-message="Username already Exists">
           <input type="text" id="email" class="form-control mb-2" name="Email" required placeholder="Email" data-parsley-type="email" data-parsley-trigger="focusout" data-parsley-checkemail data-parsley-checkemail-message="Email Address already Exists">
-          <input type="password" id="password"class="form-control mb-2" name="Password" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" data-parsley-trigger="focusout">
+          <input type="password" id="password"class="form-control mb-2" name="Password" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" data-parsley-trigger="focusout"  data-parsley-pattern-message="Password must contain 8 letters combine with numbers and special character">
           <input type="password" id="confpass"class="form-control mb-2" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-trigger="focusout">
           <input type="password" id="access"class="form-control mb-2" name="Access" placeholder="Access Code" data-parsley-trigger="focusout">
           
