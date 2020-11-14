@@ -1,6 +1,6 @@
 <?php
 
-  $con = mysqli_connect('localhost','root','','scout');
+  $con = mysqli_connect('localhost','root','','testing1');
 
   if(!$con)
   {

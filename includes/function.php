@@ -134,7 +134,7 @@
       }
         
         function LoginFunction() {
-         
+          $Message = "";
             if(isset($_GET['empty']))
             {
               $Message = " Please fill in the blanks ";
@@ -153,7 +153,7 @@
               echo ' <div class="alert alert-danger text-center">'.$Message.'</div> ';
             }
 
-            if(isset($_SESSION['ParentID']))
+            if(isset($_SESSION['MemberID']))
             {
               header("location:index.php");
             }
@@ -200,4 +200,34 @@
 
       }
 
+      function AdminLogin() {
+        $Message = "";
+
+        if(isset($_GET['empty'])) {
+          $Message = " Enter Valid User Name and password ";
+          echo ' <div class="alert alert-danger text-center">'.$Message.'</div> ';
+        }
+
+        if(isset($_GET['invalid']))
+        {
+          $Message = " User name Not Match ";
+          echo ' <div class="alert alert-danger text-center">'.$Message.'</div> ';
+        }
+
+        if(isset($_GET['passord_invalid']))
+        {
+          $Message = " Password Incorrect ";
+          echo ' <div class="alert alert-danger text-center">'.$Message.'</div> ';
+        }
+
+        if(isset($_SESSION['AdminID']))
+        {
+          header("location:index.php");
+        }
+   
+        if (isset($_SESSION['admin'])) {
+            header("location:AdminPanelFrontEnd.php");
+        }
+    }
+    
 ?>
