@@ -8,7 +8,7 @@
      //    echo "M_ID is ";        
      //    echo $M_ID;
         $output = '';
-        $connect = mysqli_connect("localhost", "root", "", "scout");
+        $connect = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "b8a2927a50099e", "8036e8df", "heroku_c1c6c2ef5faa08f");
         //   $query = "SELECT * FROM members WHERE MemberID = '".$_POST["user_id"]."'";
       
      
