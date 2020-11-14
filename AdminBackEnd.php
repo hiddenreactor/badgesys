@@ -46,7 +46,7 @@ if(isset($_POST["username"]))
 
 
 if(isset($_POST['FName']))
-if ($AccessCode !== $_POST['Access']) {
+if ($AccessCodeAdmin !== $_POST['Access']) {
 echo 'Invalid Access Code';
 return;
 }
