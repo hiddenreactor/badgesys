@@ -1,6 +1,6 @@
 <?php
 //fetch.php
-$connect = mysqli_connect("localhost", "root", "", "scout");
+$connect = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "b8a2927a50099e", "8036e8df", "heroku_c1c6c2ef5faa08f");
 // $columns = array('InventoryID', 'BadgeName', 'CategoryName', 'Levels', 'Quantity', 'DateRestock');   //this has to match with the db
 $columns = array('InventoryID', 'CategoryID', 'BadgeID', 'LevelID', 'Quantity', 'RestockDate');
 
