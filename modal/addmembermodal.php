@@ -33,7 +33,7 @@ $(function(){
             <div class="modal-body">
                 <form method="POST" id="member_form">
                 <label>Member Name</label> 
-                    <input type="text" id="membername" class="form-control input-value" name="membername" placeholder="Full Name" required data-parsley-pattern="^[A-Z][a-z]{3,30}(\s[A-Z](\.|[a-z]{1,30})?)*$" data-parsley-trigger="focusout" data-parsley-pattern-message="Invalid name.  Full name must contain first and last name with capital." data-parsley-checkmember="membername"  data-parsley-checkmember>
+                    <input type="text" id="membername" class="form-control input-value" name="membername" placeholder="Full Name" required data-parsley-pattern="^[A-Z][a-z]{1,30}(\s[A-Z](\.|[a-z]{1,30})?)*$" data-parsley-trigger="focusout" data-parsley-pattern-message="Invalid name.  Full name must contain first and last name with capital." data-parsley-checkmember="membername"  data-parsley-checkmember>
                 </br>
                 <label>Member Section</label>  
                     <select name='section' id='section' class="form-control input-value" >
