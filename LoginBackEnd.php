@@ -40,7 +40,7 @@ require_once('includes/connection.php');
     {
         if(empty($_POST['email_user']) || empty($_POST['password']))
         {
-            header("location:AdminLoginFrontEnd.php?empty");
+            header("location:index.php?empty");
             exit();
         }
         else
