@@ -2,14 +2,9 @@
 require_once('includes/connection.php');
       //export.php  
  if(isset($_POST["csv"]))  
- {
-      echo "Get Success is ";
-      echo $_GET['success'];
-      echo " ";
-      echo "\r\n";    
+ { 
       $M_ID = $_GET['success'];
       echo "Export Report in Excel.";
-        echo "\r\n";
         echo "\r\n";
         echo "\r\n";
         echo "Badges earned by ";
