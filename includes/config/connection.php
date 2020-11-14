@@ -1,16 +1,16 @@
 <?php
 
 
-define('MYSQL_USER', 'root');
+define('MYSQL_USER', "b8a2927a50099e");
  
 //Our MySQL password.
-define('MYSQL_PASSWORD', '');
+define('MYSQL_PASSWORD', "8036e8df");
  
 //The server that MySQL is located on.
-define('MYSQL_HOST', 'localhost');
+define('MYSQL_HOST', "us-cdbr-iron-east-01.cleardb.net");
  
 //The name of our database.
-define('MYSQL_DATABASE', 'scout');
+define('MYSQL_DATABASE', "heroku_c1c6c2ef5faa08f");
  
 /**
  * PDO options / configuration details.
@@ -31,5 +31,5 @@ $pdoOptions = array(
 //     MYSQL_PASSWORD, //Password
 //     $pdoOptions //Options
 // );
-$connect = new PDO("mysql:host=localhost; dbname=scout", "root", "", $pdoOptions);
+$connect = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net; dbname=heroku_c1c6c2ef5faa08f;", "b8a2927a50099e", "8036e8df", $pdoOptions);
 ?>
