@@ -2,7 +2,7 @@
 
 require_once('includes/connection.php');
 
-$query = "SELECT * FROM members, colors, sections, earned, badges, category WHERE 
+$query = "SELECT * FROM members, colors, sections, earned, badges, badgelevel, category WHERE 
 members.MemberID ='".$_POST["MemberID"]."' AND 
 members.ColorID = colors.ColorID AND 
 sections.SectionID = members.SectionID AND
@@ -31,7 +31,7 @@ $result = mysqli_query($con, $query);
         <td value = "<?php echo $row["ColorID"]; ?>"> <?php echo $row["Color"]; ?></td>
         <td value = "<?php echo $row["BadgeID"]; ?>"> <?php echo $row["BadgeName"]; ?></H>
         <td value = "<?php echo $row["CategoryID"]; ?>"> <?php echo $row["CategoryName"]; ?></td>
-        <td value = "<?php echo $row["MemberID"]; ?>"> <?php echo $row["Level"]; ?></td>
+        <td value = "<?php echo $row["LevelID"]; ?>"> <?php echo $row["Levels"]; ?></td>
         <td value = "<?php echo $row["MemberID"]; ?>"> <?php echo $row["DateReceived"]; ?></td>                    
     </tr>
                                   
