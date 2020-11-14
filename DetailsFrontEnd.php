@@ -165,7 +165,7 @@ width: 80px !important;
                 <option value="select_section">Sort By Section</option>
                 <?php
                   foreach ($result as $row) {
-                      echo '<option value="'.$row["SectionName"].'">'.$row["SectionName"].'</option>';
+                      echo '<option value="'.$row["SectionID"].'">'.$row["SectionName"].'</option>';
                   } ?>
         </select>
       </div>     
