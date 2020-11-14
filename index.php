@@ -28,7 +28,6 @@ require_once('includes/function.php');
                 <tr>
                 <th><button name="login" class="btn btn-outline-secondary">Login</button>
                 <button name="admin" class="btn btn-outline-dark">Login as Admin</button>
-                <!-- <a href="AdminLoginFrontEnd.php" class="btn btn-primary">Administrator Login</a> -->
                 </th>
                 <th><a href="RegisterFrontEnd.php" class="btn btn-sm btn-outline-secondary" style="float:right">Sign up as Register</a></th>
                 </tr>
