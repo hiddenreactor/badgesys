@@ -1,90 +1,79 @@
 <?php
 
-require_once('includes/connection.php');
+include_once('lib/access.php');
+include_once('includes/config/connection.php');
+// sleep(1);
 
-$Access = "*Admin_Scout33#";	// Accesscode
-
-if(isset($_POST['register']))
+if(isset($_POST["email"]))
 {
 
-  $FirstName = mysqli_real_escape_string($con, $_POST['FName']);
-  $LastName = mysqli_real_escape_string($con, $_POST['LName']); 
-  $UserName = mysqli_real_escape_string($con, $_POST['UName']);
-  $Email = mysqli_real_escape_string($con, $_POST['Email']);
-  $Password = mysqli_real_escape_string($con, $_POST['Password']);
-  $AccessCode = mysqli_real_escape_string($con, $_POST['AccessCode']);
-  
-  $ID = '';
 
- 
-        if(empty($FirstName) || empty($LastName) || empty($UserName) || empty($Email) || empty($Password))
-        {
-            header("location:RegisterFrontEnd.php?empty");
-            exit();
-        }
-            else
-            {
-            if(!preg_match("/^[a-z,A-Z]*$/",$FirstName) || !preg_match("/^[a-z,A-Z]*$/",$LastName) || !preg_match("/^[a-z,A-Z]*$/",$UserName))
-            {
-                header("location:RegisterFrontEnd.php?character");
-                exit();
-            }
-            else
-            {
-                if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
-                {
-                header("location:RegisterFrontEnd.php?ValidEmail");
-                exit();
-                }
-                else
-                {
-                $query = "SELECT * FROM user_data WHERE UName='".$UserName."'";
-                $result = mysqli_query($con,$query);
+ $query = " SELECT * FROM user_data WHERE Email = '".$_POST["email"]."'";
 
-                if(mysqli_fetch_assoc($result))
-                {
-                    header("location:RegisterFrontEnd.php?UserTaken");
-                    exit();
-                }
-                else
-                {
-                    $query = "SELECT * FROM user_data WHERE Email='".$Email."'";
-                    $result = mysqli_query($con,$query);
+ $statement = $connect->prepare($query);
 
-                    if(mysqli_fetch_assoc($result))
-                    {
-                    header("location:RegisterFrontEnd.php?EmailTaken");
-                    exit();
-                    }
+ $statement->execute();
 
-                        if($AccessCode !== $Access)
-                        {
-                        header("location:RegisterFrontEnd.php?code");
-                        exit();
-                        }
-                    else
-                    {
-                        $HashPass = password_hash($Password, PASSWORD_DEFAULT);
-                        date_default_timezone_set('America/Vancouver');
-                        $Date = date("d/m/y");
-                        
-                        $query = "INSERT INTO user_data (FName, LName, UName, Email, Password, Date) VALUES ('$FirstName', '$LastName', '$UserName', '$Email', '$HashPass', '$Date')";
-                                                                 
-                        mysqli_query($con, $query);
-                            header("location:RegisterFrontEnd.php?success");
-                            exit();
-                   
-                    }
-                }
-                }
-            }
-            }
-        }
-                                 
-  
-else
-{
-  header("location:register.php");
+ $total_row = $statement->rowCount();
+
+ if($total_row == 0)
+ {
+  $output = array(
+   'success' => true
+  );
+
+  echo json_encode($output);
+ }
 }
 
- ?>
+if(isset($_POST["username"]))
+{
+
+
+ $query = " SELECT * FROM user_data WHERE UName = '".$_POST["username"]."' ";
+
+ $statement = $connect->prepare($query);
+
+ $statement->execute();
+
+ $total_row = $statement->rowCount();
+
+ if($total_row == 0)
+ {
+  $output = array(
+   'success' => true
+  );
+
+  echo json_encode($output);
+ }
+}
+
+
+if(isset($_POST['FName']))
+if ($AccessCode !== $_POST['Access']) {
+echo 'Invalid Access Code';
+return;
+}
+else {
+
+    {
+
+ 
+ $data = array(
+  ':fname'  => $_POST['FName'],
+  ':lname'  => $_POST['LName'],
+  ':username'  => $_POST['UName'],
+  ':email'   => $_POST['Email'],
+  ':password'   => password_hash($_POST['Password'], PASSWORD_DEFAULT),
+  ':date' =>  date("d/m/y")
+ );
+  
+ $query = " INSERT INTO user_data (FName, LName, UName, Email, Password, Date) VALUES (:fname, :lname, :username, :email, :password, :date)";
+ $statement = $connect->prepare($query);
+ if ($statement->execute($data)) {
+     echo 'Registration Completed Successfully...';
+ }
+}
+}
+
+?>
