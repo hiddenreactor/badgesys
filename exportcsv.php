@@ -18,7 +18,7 @@ require_once('includes/connection.php');
         $row = mysqli_fetch_assoc($result);
         echo $row["MemberName"];
         echo "\r\n";      
-      $connect = mysqli_connect("localhost", "root", "", "scout");  
+      $connect = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "b8a2927a50099e", "8036e8df", "heroku_c1c6c2ef5faa08f"); 
       header('Content-Type: text/csv; charset=utf-8');  
       header('Content-Disposition: attachment; filename=member_earned.csv');  
       $output = fopen("php://output", "w");  
