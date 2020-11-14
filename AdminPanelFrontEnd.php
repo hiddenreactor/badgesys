@@ -3,9 +3,7 @@
 
 require_once('includes/header.php');
 
-
-$connect = new PDO("mysql:host=localhost; dbname=scout;", "root", "");
-
+$connect = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net; dbname=heroku_c1c6c2ef5faa08f;", "b8a2927a50099e", "8036e8df");
    
     if (isset($_SESSION['admin'])) {
         $_SESSION['GET'] = $GetID = $_GET['success'];
