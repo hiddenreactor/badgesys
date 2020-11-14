@@ -12,7 +12,7 @@ if(isset($_POST["excel"]))
         echo "Export Report in Excel.";
         echo "\r\n";
         echo "\r\n";
-        echo "\r\n";
+        echo "\n";
         echo "Badges earned by ";
         echo $row["MemberName"];
         echo "\r\n";
