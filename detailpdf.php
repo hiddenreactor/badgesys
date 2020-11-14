@@ -5,7 +5,7 @@
 
       $output = ''; 
     //   $output .= 'hello ' .$row["MemberName"]. ' how are you'; 
-      $con = mysqli_connect("localhost", "root", "", "scout");  
+      $con = mysqli_connect('us-cdbr-iron-east-01.cleardb.net','b8a2927a50099e','8036e8df','heroku_c1c6c2ef5faa08f'); 
     //   $query = "SELECT SectionName, BadgeName, CategoryName, Levels, DateReceived, FName FROM members, colors, sections, earned, badges, badgelevel, admin, category WHERE 
     //                     earned.MemberID = members.MemberID   AND 
     //                     earned.ColorID = colors.ColorID AND 
@@ -37,7 +37,7 @@
       require_once('tcpdf/tcpdf.php');  
 
       $LeaderID = $_GET['success']; 
-      $con = mysqli_connect("localhost", "root", "", "scout");  
+      $con = mysqli_connect('us-cdbr-iron-east-01.cleardb.net','b8a2927a50099e','8036e8df','heroku_c1c6c2ef5faa08f');
       $query1 = "SELECT FName, LName from user_data WHERE user_data.ID = $LeaderID";
       $result = mysqli_query($con, $query1);
       $row = mysqli_fetch_assoc($result); 
