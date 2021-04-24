@@ -126,16 +126,17 @@ max-width: 200px !important;
 div.dataTables_length select {
 width: 80px !important;
 }
-
+.navbar {
+  background: #293E6A;
+}
 </style>
 
  <body>
   <div class="container box">
-        
-              
-                    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white mt-5">              
+                      
+                    <nav class="navbar navbar-expand-md text-white mt-5">              
                         <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <div class="navbar-nav">
+                            <div class="nav">
                                 <a href="" class="btn btn-lg btn-secondary mb-3 float-left">Refresh Page</a>  
                                 <!-- <a href="" class="nav-item nav-link">Page 1</a>
                                 <a href="" class="nav-item nav-link active">Page 2</a> -->
