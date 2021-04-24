@@ -2,10 +2,10 @@
 
 include('database_connection.php');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "scout";
+$servername = "us-cdbr-east-03.cleardb.com";
+$username = "b9cd122ae5026e";
+$password = "287b0048";
+$dbname = "heroku_d1dabaaefc9d538";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
