@@ -1,4 +1,9 @@
 <?php
-$AccessCode = "Scout33";
-$AccessCodeAdmin = "Scout33Admin";
+$AccessCode = "asdf";
+$AccessCodeAdmin = "asdf";
+
+// Leader: Scout33
+
+// Admin: Scout33Admin
+
 ?>
