@@ -4,6 +4,7 @@
 
 require_once('includes/header.php');
 
+// $connect = new PDO("mysql:host=localhost; dbname=scout;", "root", "");
 $connect = new PDO("mysql:host=us-cdbr-east-03.cleardb.com; dbname=heroku_d1dabaaefc9d538;", "b9cd122ae5026e", "287b0048");
 $query = "SELECT DISTINCT BadgeName FROM (inventorys INNER JOIN badges ON inventorys.BadgeID = badges.BadgeID)";
 $statement = $connect->prepare($query);
