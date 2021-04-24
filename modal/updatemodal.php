@@ -5,7 +5,7 @@
       <div class="modal-dialog">  
            <div class="modal-content">  
                 <div class="modal-header">                        
-                     <h4 class="modal-title">Update Member        
+                     <h4 class="modal-title">Update Member  
                      </h4>  
                      <button type="button" class="close" data-dismiss="modal">&times;</button>  
                 </div>  
@@ -46,10 +46,12 @@
                             </select> 
                           <br />   
                           <label>Update Email</label>  
-                          <!-- <input type="text" name="Email" id="Email" class="form-control" />  -->
-                          <!-- <input type="text" id="Email" class="form-control mb-2" name="Email" required placeholder="Email" data-parsley-type="email" data-parsley-trigger="focusout" data-parsley-checkemail data-parsley-checkemail-message="Email Address already Exists">  -->
-                          <input type="text" id="updateemail" class="form-control mb-2" name="Email" required placeholder="Email" data-parsley-email="email" data-parsley-trigger="focusout" data-parsley-updateemail>
+                          <input type="text" id="updateemail" class="form-control mb-2" name="email" required placeholder="Email" data-parsley-type="email" data-parsley-trigger="focusout" data-parsley-checkemail >
+                         <!-- <input type="text" id="updateemail" class="form-control mb-2" name="email" required placeholder="Email" data-parsley-email="email" data-parsley-trigger="focusout" data-parsley-updateemail> -->
                           <br />  
+                          <!-- <label>Update Password</label>  
+                          <input type="password" id="updatepassword" class="form-control mb-2" name="Password" required placeholder="Password" data-parsley-email="password" data-parsley-trigger="focusout" data-parsley-updateemail>
+                          <br />  -->
                           <label>Update Contact</label>  
                           <input type="text" id='Contact' name='Contact' placeholder=" Contact Number" value="" class="form-control mb-3">
                           <!-- <input type="text" name="Contact" id="Contact" class="form-control" required data-parsley-trigger="focusout" data-parsley-pattern-message="Please enter a valid Australian mobile phone number." data-parsley-pattern="^\d{3} \d{3} \d{4}$" />  -->
