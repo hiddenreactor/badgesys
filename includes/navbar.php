@@ -2,8 +2,7 @@
 // require_once('includes/connection.php');
 
 
-// $connect = new PDO("mysql:host=localhost; dbname=scout;", "root", "");
-$connect = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net; dbname=heroku_c1c6c2ef5faa08f;", "b8a2927a50099e", "8036e8df");
+$connect = new PDO("mysql:host=us-cdbr-east-03.cleardb.com; dbname=heroku_d1dabaaefc9d538;", "b9cd122ae5026e", "287b0048");
    
     if (isset($_SESSION['admin'])) {
 
