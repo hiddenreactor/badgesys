@@ -40,6 +40,9 @@ $connect = new PDO("mysql:host=us-cdbr-east-03.cleardb.com; dbname=heroku_d1daba
   background-color: darkgrey;
   color: white;
 }
+.navbar {
+  background: #293E6A;
+}   
 </style>
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ $connect = new PDO("mysql:host=us-cdbr-east-03.cleardb.com; dbname=heroku_d1daba
  
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark text-white mt-5">              
+<nav class="navbar navbar-expand-md text-white mt-5">              
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="nav">
               <ul>
