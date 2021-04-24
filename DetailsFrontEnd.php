@@ -3,12 +3,13 @@
 // require_once('includes/connection.php');
 
 require_once('includes/header.php');
-$connect = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net; dbname=heroku_c1c6c2ef5faa08f;", "b8a2927a50099e", "8036e8df");
+$connect = new PDO("mysql:host=localhost; dbname=scout;", "root", "");
+// $connect = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net; dbname=heroku_c1c6c2ef5faa08f;", "b8a2927a50099e", "8036e8df");
 
 
 // $query = "SELECT DISTINCT SectionName FROM (members INNER JOIN sections ON members.SectionID = sections.SectionID)";
 if (isset($_SESSION['MemberID'])) {
-    // echo "Member ID: ";
+    echo "Member ID: ";
     // echo $_SESSION['MemberID'];
 
     $_SESSION['GET'] = $GetID = $_GET['success'];
@@ -147,7 +148,7 @@ width: 80px !important;
 
    <?php
     
-    if (isset($_SESSION['admin']) || $_SESSION['GET'] == $_SESSION['MemberID']) {
+    if (isset($_SESSION['login']) || $_SESSION['GET'] == $_SESSION['MemberID']) {
       // echo "Leader ID: ";
       // echo $_SESSION['MemberID'];
       $LeaderID = $_SESSION['MemberID'];
@@ -211,32 +212,6 @@ width: 80px !important;
   </div>         
   </div> 
   
-
-<div id="userModal" class="modal fade">
- <div class="modal-dialog">
-  <form method="post" id="user_form" enctype="multipart/form-data">
-   <div class="modal-content">
-    <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">Add User</h4>
-    </div>
-    <div class="modal-body">
-     <label>Enter Quantity</label>
-     <input type="text" name="Quantity" id="Quantity" class="form-control" />
-     <br />
-    </div>
-    <div class="modal-footer">
-     <input type="hidden" name="user_id" id="user_id" />
-     <input type="hidden" name="operation" id="operation" />
-     <input type="submit" name="action" id="action" class="btn btn-warning" value="Add" />
-     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-   </div>
-  </form>
- </div>
-
- <?php
-include('modal/usermodal.php'); ?>
 
 <?php
  require_once('includes/footer.php');

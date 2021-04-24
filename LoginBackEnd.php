@@ -33,14 +33,17 @@ require_once('includes/connection.php');
                     $MemberID = $row['ID'];
                     header("location:DetailsFrontEnd.php?success=$MemberID");
                 }
-            }    
+            } else {
+                header("location:index.php?status");
+                exit();
+            }   
         }        
     }
     if(isset($_POST['admin']))
     {
         if(empty($_POST['email_user']) || empty($_POST['password']))
         {
-            header("location:index.php?empty");
+            header("location:admin.php?empty");
             exit();
         }
         else
@@ -50,14 +53,14 @@ require_once('includes/connection.php');
 
             $query = "SELECT * FROM admin WHERE Email='".$Email_User."' OR UName='".$Email_User."'";
             $result = mysqli_query($con,$query);
-            echo $query;
+          
             if($row = mysqli_fetch_assoc($result))
             {
                 $Hash = password_verify($Password, $row['Password']);
                 
                 if($Hash==false)
                 {
-                header("location:AdminLoginFrontEnd.php?passord_invalid");
+                header("location:admin.php?leader_password_invalid");
                 exit();
                 }
                 elseif($Hash==true)
@@ -69,7 +72,7 @@ require_once('includes/connection.php');
             }
             else
             {
-                header("location:AdminLoginFrontEnd.php?invalid");
+                header("location:admin.php?status");
                 exit();
             }
         }

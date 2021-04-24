@@ -2,10 +2,10 @@
 
 include('database_connection.php');
 
-$servername = "us-cdbr-iron-east-01.cleardb.net";
-$username = "b8a2927a50099e";
-$password = "8036e8df";
-$dbname = "heroku_c1c6c2ef5faa08f";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "scout";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -144,67 +144,67 @@ echo "\r\n";
             //     echo "Inventory Low.";
             // }
             
-            // if (!empty($result)) { // Beginning of sending email on low inventory
-            //     // $sql = "SELECT * FROM inventorys WHERE BadgeID = ".$_POST["BadgeID"]." AND LevelID = ".$_POST["LevelID"]." ";
-            //     // $sql = "SELECT * FROM inventorys WHERE BadgeID = ".$_POST["BadgeID"]." AND LevelID = ".$_POST["LevelID"]." AND Quantity <= 10";
-            //     $sql = "SELECT Levels, Quantity, BadgeName FROM inventorys, badgelevel, badges WHERE inventorys.Quantity <= 9 
-            //     AND inventorys.LevelID = badgelevel.LevelID AND inventorys.BadgeID = badges.BadgeID ORDER BY InventoryID";
+            if (!empty($result)) { // Beginning of sending email on low inventory
+                // $sql = "SELECT * FROM inventorys WHERE BadgeID = ".$_POST["BadgeID"]." AND LevelID = ".$_POST["LevelID"]." ";
+                // $sql = "SELECT * FROM inventorys WHERE BadgeID = ".$_POST["BadgeID"]." AND LevelID = ".$_POST["LevelID"]." AND Quantity <= 10";
+                $sql = "SELECT Levels, Quantity, BadgeName FROM inventorys, badgelevel, badges WHERE inventorys.Quantity <= 9 
+                AND inventorys.LevelID = badgelevel.LevelID AND inventorys.BadgeID = badges.BadgeID ORDER BY InventoryID";
 
-            //     // $output = '';
-            //     $output = '<html><body>';                
-            //     $output .= '<p>This email is to inform you the following badge has less than 10.</p>';
-            //     $output .= '<table class="table">';
-            //     $output .= '<form><thead>';
-            //     $output .= '<tr><td style="font-weight:bold">Badge Name</td><td style="font-weight:bold">Badge Level</td><td style="font-weight:bold">Quantity</td></tr>';
-            //     $result = $conn->query($sql);                
-            //     while ($row=mysqli_fetch_assoc($result)) {
-            //         $BadgeName = $row["BadgeName"];
-            //         $Levels = $row["Levels"];
-            //         $Quantity = $row["Quantity"];
+                // $output = '';
+                $output = '<html><body>';                
+                $output .= '<p>This email is to inform you the following badge has less than 10.</p>';
+                $output .= '<table class="table">';
+                $output .= '<form><thead>';
+                $output .= '<tr><td style="font-weight:bold">Badge Name</td><td style="font-weight:bold">Badge Level</td><td style="font-weight:bold">Quantity</td></tr>';
+                $result = $conn->query($sql);                
+                while ($row=mysqli_fetch_assoc($result)) {
+                    $BadgeName = $row["BadgeName"];
+                    $Levels = $row["Levels"];
+                    $Quantity = $row["Quantity"];
 
-            //         // echo $BadgeName.$Levels.$Quantity;
-            //         // echo "\r\n";
-            //         $output .= '<tr><td>'.$row["BadgeName"].' </td>';  
-            //         $output .= '<td>'.$row["Levels"].' </td>';  
-            //         $output .= '<td>'.$row["Quantity"].' </td></tr>';  
+                    // echo $BadgeName.$Levels.$Quantity;
+                    // echo "\r\n";
+                    $output .= '<tr><td>'.$row["BadgeName"].' </td>';  
+                    $output .= '<td>'.$row["Levels"].' </td>';  
+                    $output .= '<td>'.$row["Quantity"].' </td></tr>';  
                                         
-            //     };
-            //     $output .= '</table></form></thead>';
-            //     $output .= '<p>Please restock at your earliest convenience.</p>';
-            //     $output .= '<p>Thank you</p>';
-            //     $output .= '<p>Scout Group33 Badge Support Team.</p>';
-            //     $output .= '</body></html>';
+                };
+                $output .= '</table></form></thead>';
+                $output .= '<p>Please restock at your earliest convenience.</p>';
+                $output .= '<p>Thank you</p>';
+                $output .= '<p>Scout Group33 Badge Support Team.</p>';
+                $output .= '</body></html>';
 
-            //     print $output;
+                // print $output;
 
                 
-            //     if ($result->num_rows > 0) {
-            //         // echo "This Badge is LOW";
-            //         // echo "\r\n";
-            //         // echo $row["Quantity"];
-            //         $to      = 'philbertyu@gmail.com';
-            //         $subject = 'Inventory status alert!';
-            //         // $message .= 'This message is to inform you that badge <b>'.$row["BadgeName"].'</b> with level '.$row["Levels"].' has '.$row["Quantity"].' available.';  
-            //         // $message .= 'Please restock at your earliest convenience.';
-            //         // $headers = 'From: philbertyu2@gmail.com' . "\r\n" .
-            //         //     'Reply-To: philbertyu2@gmail.com' . "\r\n" .
-            //         //     'X-Mailer: PHP/' . phpversion();
-            //         // To send HTML mail, the Content-type header must be set
-            //         $headers  = 'MIME-Version: 1.0' . "\r\n";
-            //         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                if ($result->num_rows > 0) {
+                    // echo "This Badge is LOW";
+                    // echo "\r\n";
+                    // echo $row["Quantity"];
+                    $to      = 'philbertyu@gmail.com';
+                    $subject = 'Inventory status alert!';
+                    // $message .= 'This message is to inform you that badge <b>'.$row["BadgeName"].'</b> with level '.$row["Levels"].' has '.$row["Quantity"].' available.';  
+                    // $message .= 'Please restock at your earliest convenience.';
+                    // $headers = 'From: philbertyu2@gmail.com' . "\r\n" .
+                    //     'Reply-To: philbertyu2@gmail.com' . "\r\n" .
+                    //     'X-Mailer: PHP/' . phpversion();
+                    // To send HTML mail, the Content-type header must be set
+                    $headers  = 'MIME-Version: 1.0' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-            //         // Additional headers
-            //         $headers .= 'To: Philbert Yu <philbertyu@gmail.com>' . "\r\n";
-            //         $headers .= 'From: Badge System Reminder <philbertyu2@gmail.com>' . "\r\n";
-            //         mail($to, $subject, $output, $headers);
-            //         echo "Email sent!";
-            //     } else {
-            //         echo "mail send ... ERROR!";
-            //         print_r( error_get_last() );
-            //     } // End of sending email on low inventory
+                    // Additional headers
+                    $headers .= 'To: Philbert Yu <philbertyu@gmail.com>' . "\r\n";
+                    $headers .= 'From: Badge System Reminder <philbertyu2@gmail.com>' . "\r\n";
+                    mail($to, $subject, $output, $headers);
+                    echo "Email sent!";
+                } else {
+                    echo "mail send ... ERROR!";
+                    print_r( error_get_last() );
+                } // End of sending email on low inventory
 
 
-            // }
+            }
         }
     }
 }

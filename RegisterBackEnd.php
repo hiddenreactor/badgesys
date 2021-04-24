@@ -51,7 +51,8 @@ if(isset($_POST["username"]))
 
 if(isset($_POST['FName']))
 if ($AccessCode !== $_POST['Access']) {
-echo 'Invalid Access Code';
+echo 'Invalid Access Code!';
+echo '<meta http-equiv="refresh" content="2;url=index.php">';
 return;
 }
 else {
@@ -72,6 +73,8 @@ else {
  $statement = $connect->prepare($query);
  if ($statement->execute($data)) {
      echo 'Registration Completed Successfully...';
+     session_unset();
+    //  header( "refresh:2;url=index.php" );
  }
 }
 }
