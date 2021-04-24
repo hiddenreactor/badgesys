@@ -190,7 +190,7 @@ textarea.parsley-success {
                         <button class=btn btn-link name="logout">Logout</button>
                         </form>';
                 } else {
-                    echo '<a href="/badgesys/index.php" class="nav-link">Login</a>';
+                    echo '<a href="/index.php" class="nav-link">Login</a>';
                 }
               ?>
             </li>
