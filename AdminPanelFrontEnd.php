@@ -15,7 +15,6 @@ $connect = new PDO("mysql:host=us-cdbr-east-03.cleardb.com; dbname=heroku_d1daba
         // echo $GetID;
         if ($_SESSION['admin'] == $_SESSION['GET']) {
             ?>
-
 <style>
 
 button.dt-button,
@@ -30,7 +29,6 @@ div.dataTables_length select {
 width: 80px !important;
 }
 </style> 
-
  
 <div class="container box">
 <?php require_once('includes/navbar.php'); ?>
@@ -275,7 +273,8 @@ var user_id = $(this).attr("id");
 
 <!-- //Activate Update Modal -->
 <script type="text/javascript" language="javascript" >
-$(document).on('click', '.update_member', function(){  
+$(document).on('click', '.update_member', function(){ 
+      $('#update_form').parsley();  
       let user_id = $(this).attr("id");  
       $.ajax({  
           url:"UpdateMemberSingleFrontEnd.php",  
@@ -301,6 +300,7 @@ $(document).on('click', '.update_member', function(){
 }); 
 
 $(document).on('submit', '#update_form', function(event){
+  $('#update_form').parsley(); 
 event.preventDefault();
 var user_id = $(this).attr("id");
  $.ajax({
