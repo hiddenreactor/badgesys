@@ -1,16 +1,16 @@
 <?php
 
 
-define('MYSQL_USER', "b8a2927a50099e");
+define('MYSQL_USER', "b9cd122ae5026e");
  
 //Our MySQL password.
-define('MYSQL_PASSWORD', "8036e8df");
+define('MYSQL_PASSWORD', "287b0048");
  
 //The server that MySQL is located on.
-define('MYSQL_HOST', "us-cdbr-iron-east-01.cleardb.net");
+define('MYSQL_HOST', "us-cdbr-east-03.cleardb.com");
  
 //The name of our database.
-define('MYSQL_DATABASE', "heroku_c1c6c2ef5faa08f");
+define('MYSQL_DATABASE', "heroku_d1dabaaefc9d538");
  
 /**
  * PDO options / configuration details.
