@@ -18,7 +18,7 @@ if(isset($_POST["detailexcel"]))
     $query = "SELECT MemberName, Date, SectionName, Email, Contact FROM members, sections WHERE 
     members.SectionID = sections.SectionID  ORDER BY members.MemberID
                   ";
- $connect = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "b8a2927a50099e", "8036e8df", "heroku_c1c6c2ef5faa08f");    
+ $connect = mysqli_connect('us-cdbr-east-03.cleardb.com','b9cd122ae5026e','287b0048','heroku_d1dabaaefc9d538');  
  $result = mysqli_query($connect, $query);
  if(mysqli_num_rows($result) > 0)
  {
