@@ -55,25 +55,8 @@ date_default_timezone_set($timezone);
 $today = date("d-m-y");
 ?>
 
-
- 
 <style>
-  body
-  {
-   margin:0;
-   padding:0;
-   background-color:#f1f1f1;
-  }
-  .box
-  {
-   width:1200px;
-   padding:20px;
-   background-color:#fff;
-   border:1px solid #ccc;
-   border-radius:5px;
-   margin-top:25px;
-   box-sizing:border-box;
-  }
+
   table.dataTable thead .none.sorting:after {
     display: none;
   }
@@ -126,25 +109,51 @@ max-width: 200px !important;
 div.dataTables_length select {
 width: 80px !important;
 }
+
+.nav ul {
+  list-style:none;
+  text-align:center;
+  padding:0;
+  margin:0;
+}
+.nav li {
+  display: inline-block;
+}
+.nav a {
+  text-decoration:none;
+  color:#fff;
+  width: 180px;
+  display: block;
+  padding-top:8px;
+  padding-bottom:8px;
+  transition: 0.4s;
+}
+.nav a:hover {
+  background: #cebf9a ;
+  transition:0.6s;
+  color:black;
+}
+.active, .btn:hover {
+  background-color: darkgrey;
+  color: white;
+}
+
 .navbar {
   background: #293E6A;
 }
 </style>
 
  <body>
-  <div class="container box">
-                      
-                    <nav class="navbar navbar-expand-md text-white mt-5">              
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <div class="nav">
-                                <a href="" class="btn btn-lg btn-secondary mb-3 float-left">Refresh Page</a>  
-                                <!-- <a href="" class="nav-item nav-link">Page 1</a>
-                                <a href="" class="nav-item nav-link active">Page 2</a> -->
-                            </div>
-                        </div>
-                    </nav>
-                
-        
+  <div class="container box">              
+    <nav class="navbar navbar-expand-md text-white mt-5">              
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="nav">
+          <ul>
+            <li><a href="" class="btn btn-outline-default btn-sm float-left" style="width: 100px;">Refresh Page</a></li>
+          </ul>  
+        </div>
+      </div>
+    </nav>     
    <h1 align="center">Member Detail</h1>
 
    <?php
