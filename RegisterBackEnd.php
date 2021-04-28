@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 include_once('lib/access.php');
 include_once('includes/config/connection.php');
 // sleep(1);
@@ -72,11 +72,12 @@ else {
  $query = " INSERT INTO user_data (FName, LName, UName, Email, Password, Date) VALUES (:fname, :lname, :username, :email, :password, :date)";
  $statement = $connect->prepare($query);
  if ($statement->execute($data)) {
-     echo 'Registration Completed Successfully...';
-     session_unset();
+//      echo 'Registration Completed Successfully...';
+        header( "refresh:1;url=index.php" );
+//      session_unset();
     //  header( "refresh:2;url=index.php" );
  }
 }
 }
-
+ob_end_flush();
 ?>
