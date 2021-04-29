@@ -26,11 +26,11 @@ require_once('includes/function.php');
                   <button name="login" class="btn btn-xs btn-outline-info" style="margin-right:3px;">Leader Login</button>
                   <a href="admin.php" class="btn btn-xs btn-outline-light" style="margin-right:3px;">Admin Login</a>
                   <a href="memberlogin.php" class="btn btn-xs btn-outline-warning">Member Login</a>
-                  <a href="RegisterFrontEnd.php" class="btn btn-xs btn-info" style="float:right; margin-top:5px; margin-right:1px;">Sign up as Register</a>
+                  <a href="RegisterFrontEnd.php" class="btn btn-xs btn-info" style="float:right; width: 92px; margin-top:5px; margin-right:1px;">Register as Leader</a>
                 </tr>
                 <tr>                
                   <td><a href="./passwordleader/enter_email.php" style="font-size: 11px; color:white;">Forgot Password</a></td>  
-                  <td><a href="AdminFrontEnd.php" class="btn btn-xs btn-light" style="float:right; width:92px; margin-top:3px;">Sign up as Admin</a></td>                    
+                  <td><a href="AdminFrontEnd.php" class="btn btn-xs btn-light" style="float:right; width:92px; margin-top:3px;">Register as Admin</a></td>                    
                 </tr>                
               </table>          
           </form>
