@@ -191,6 +191,7 @@ textarea.parsley-success {
                         </form>';
                 } else {
                     echo '<a href="/index.php" class="nav-link">Login</a>';
+                    session_unset();
                 }
               ?>
             </li>
