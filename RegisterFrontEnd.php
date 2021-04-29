@@ -1,7 +1,7 @@
 <?php 
 require_once('includes/header.php');
 require_once('includes/function.php');
-require_once('includes/script.php');
+// require_once('includes/script.php');
 require_once('style/parsley.php'); 
 ?>
 <style>
@@ -53,11 +53,7 @@ width: 100%;
   </div>
 </div>
 
-
-
 <?php require_once('includes/footer.php'); ?>
-
- 
          
 <!--This validateEmail with Parsley without CSS-->
 <script>
@@ -140,6 +136,7 @@ $(document).ready(function(){
      $('#validate_form').parsley().reset();
      $('#submit').attr('disabled',false);
      $('#submit').val('Submit');
+     window.location.href = 'index.php'; // want to post the data this in redirection
      alert(data);
     }
    });
@@ -147,4 +144,3 @@ $(document).ready(function(){
  });
 });  
 </script>
-
