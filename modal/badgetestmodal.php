@@ -8,8 +8,8 @@
                 <div class="modal-body">  
                      <form method="post" id="schedule_form">                              
                           <label><i>Under Construction--Coming soon!!</i></label>  
-                          <input type="password" id="password" class="form-control mb-2" name="password" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" data-parsley-trigger="focusout" data-parsley-pattern-message="Password must contain 8 letters combine with numbers and special character" onchange='check_pass();'>
-                          <input type="password" id="confpass" class="form-control mb-2" name="confpass" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-trigger="focusout" onchange='check_pass();'>
+                          <input type="password" id="password" class="form-control mb-2" name="password" placeholder="Select Date" required data-parsley-length="[8, 16]" data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" data-parsley-trigger="focusout" data-parsley-pattern-message="Password must contain 8 letters combine with numbers and special character" onchange='check_pass();'>
+                          <input type="password" id="confpass" class="form-control mb-2" name="confpass" placeholder="Confirm Date" data-parsley-equalto="#password" data-parsley-trigger="focusout" onchange='check_pass();'>
                           <br />
                     <input type="hidden" name="u_id" id="u_id" />  
                     <input type="hidden" name="operate" id="operate" />
