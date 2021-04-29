@@ -5,6 +5,18 @@ require_once('style/parsley.php');
 require_once('includes/connection.php');
 ?>
 
+<style>
+
+h4 {
+  background: #293E6A;
+}
+
+.bg-custom {
+    background: #C0C0C0;
+}
+
+</style>
+
 <meta http-equiv="refresh" content="1800;url=logout.php" />
 <?php
 echo "THis ID  ";
@@ -20,8 +32,8 @@ if ($row=mysqli_fetch_assoc($result)) {
 <div class="container" onLoad="getDetail(this.value);">
         <div class="row">
             <div class="col">
-                <div class="card bg-dark text-white mt-5">
-                    <h3 class="text-center py-3">Badge Details for <?php echo $MemberName ?></h3>
+                <div class="card bg-custom text-white mt-5"> 
+                    <h4 class="text-center py-3">Badge Details for <?php echo $MemberName ?></h4>
                 </div>
             </div>
         </div>
@@ -113,8 +125,9 @@ if(isset($_SESSION['memberlogin']))
         <div class="card-body">
             <a href = "javascript:history.back()" class="btn btn-outline-primary mb-1" style="position:relative; top:2px;">Back</a>
             <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-info update_account" >Edit Profile</button>      
-            <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-success update_password">Change Password</button>                       
-            <a href="AddBadgeFrontEnd.php?addBadge=<?php echo $GetID ?>" class="btn btn-danger">Schedule Badge Test</a>
+            <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-success update_password">Change Password</button> 
+            <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-danger schedule_test">Schedule Badge Test</button>                       
+            <!-- <a href="AddBadgeFrontEnd.php?addBadge=<?php echo $GetID ?>" class="btn btn-danger">Schedule Badge Test</a> -->
             
             <div class="form-inline float-right">
                 <form method="post" action="exportcsv.php?success=<?php echo "$GetID" ?>"> 
@@ -139,6 +152,7 @@ if(isset($_SESSION['memberlogin']))
 <?php 
     include('modal/accountmodal.php');
     include('modal/passwordmodal.php');
+    include('modal/badgetestmodal.php');
 ?>
 
 <!-- //Activate Update Modal -->
@@ -234,6 +248,56 @@ var user_id = $(this).attr("id");
    alert(data);
    $('#password_form')[0].reset();
    $('#passwordModal').modal('hide');
+//    $('#user_data').DataTable().ajax.reload(); 
+   location.reload();
+  }
+ });
+});
+</script>
+
+<!-- //Activate Badge Test Schedule Modal -->
+<script type="text/javascript" language="javascript" >
+$(document).on('click', '.schedule_test', function(){ 
+    $('#schedule_form').parsley(); 
+    let user_id = $(this).attr("id"); 
+      $.ajax({  
+          url:"ScheduleTestFrontEnd.php",  
+          method:"POST",  
+          data:{u_id:user_id},  
+          dataType:"json",  
+          success:function(data){   
+                $('#updatemember').val(data.MemberName);
+                $('.modal-title').text("Schedule Badge Test");
+                $('.modal-title').css("background-color", "yellow"); // change header bg color using jquery method 
+                $('.modal-title').css("color", "lightgray");
+                $('#u_id').val(user_id);
+                $('#act').val("Reset Password");
+                $('#operate').val("Reset Password");
+                $('#act').removeClass('btn btn-success').addClass('btn btn-danger'); 
+                $('#badgetestModal').modal('show'); 
+                // $('#user_data').DataTable().ajax.reload(); 
+          }  
+      });  
+}); 
+
+$(document).on('submit', '#schedule_form', function(event){
+    $('#schedule_form').parsley(); 
+event.preventDefault();
+var user_id = $(this).attr("id");
+ $.ajax({
+  url:"ScheduleTestBackEnd.php",
+  method:'POST',
+  data:new FormData(this),
+  contentType:false,
+  processData:false,
+  beforeSend:function(){  
+      $('#act').val("Updating..");  
+  },
+  success:function(data)
+  {
+   alert(data);
+   $('#schedule_form')[0].reset();
+   $('#badgetestModal').modal('hide');
 //    $('#user_data').DataTable().ajax.reload(); 
    location.reload();
   }
