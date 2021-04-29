@@ -123,7 +123,7 @@ if(isset($_SESSION['memberlogin']))
 </table>    
     <div class="row">                                             
         <div class="card-body">
-            <a href = "javascript:history.back()" class="btn btn-outline-primary mb-1" style="position:relative; top:2px;">Back</a>
+            <button type="button"  class="btn btn-primary mb-1" style="position:relative; top:2px;" disabled>Back</button>
             <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-info update_account" >Edit Profile</button>      
             <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-success update_password">Change Password</button> 
             <button type="button" id="<?php echo "$GetID" ?>" class="btn btn-outline-danger schedule_test">Schedule Badge Test</button>                       
