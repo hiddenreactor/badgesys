@@ -20,8 +20,8 @@ h4 {
 
 <meta http-equiv="refresh" content="1800;url=logout.php" />
 <?php
-echo "THis ID  ";
-echo $_GET['success'];
+// echo "THis ID  ";
+// echo $_GET['success'];
 
 $query = "SELECT * FROM members WHERE members.MemberID = '".$_GET['success']."'";
 $result = mysqli_query($con, $query);
@@ -60,9 +60,9 @@ if ($row=mysqli_fetch_assoc($result)) {
 if(isset($_SESSION['memberlogin']))
 {
     $_SESSION['GET'] = $GetID = $_GET['success'];
-    echo $GetID;
-    echo $_GET['success'];
-    echo $_SESSION['GET'];
+//     echo $GetID;
+//     echo $_GET['success'];
+//     echo $_SESSION['GET'];
    
     $query = "SELECT * FROM members, colors, sections, earned, badges, category WHERE 
     members.MemberID ='".$GetID."' AND 
