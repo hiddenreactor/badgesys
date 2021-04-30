@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="1800;url=logout.php" />
 <?php 
 require_once('includes/header.php');
 require_once('includes/script.php');
