@@ -79,7 +79,7 @@ if(isset($_SESSION['memberlogin']))
         {
             $MemberName = $row['MemberName'];
             
-    echo $row['MemberID'];
+//     echo $row['MemberID'];
     
     require_once('includes/footer.php'); 
     ?>
