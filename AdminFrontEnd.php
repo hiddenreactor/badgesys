@@ -133,7 +133,10 @@ $(document).ready(function(){
      $('#validate_form').parsley().reset();
      $('#submit').attr('disabled',false);
      $('#submit').val('Submit');
-     window.location.href = 'admin.php'; // want to post the data this in redirection
+      setTimeout(function()
+        {
+          location.href="admin.php"
+        } , 1000);  // want to post the data this in redirection
      alert(data);
     }
    });
